@@ -1,0 +1,229 @@
+package movie;
+
+public class kortfilm extends Movie{
+	public String sort;
+	
+	public kortfilm ()
+	{
+		
+	}
+	
+	public kortfilm (String inTitle, String inType, String inMainRoll, int inLength, String inSort)
+	{
+		super(inTitle, inType, inMainRoll, inLength);
+		this.sort = inSort;
+	}
+	
+	public String getSort()
+	{
+		return sort;
+	}
+	
+	public void setSort(String inSort)
+	{
+		this.sort = inSort;
+	}
+	
+	public void printOut()
+	{
+		super.printOut();
+		System.out.println(sort);
+	}
+
+}
+
+
+package movie;
+
+public class långfilm extends Movie{
+	
+	public String location = "";
+	
+	//construktor
+	public långfilm()
+	{
+	}
+	
+	//constructor
+	public långfilm(String inTitle, String inType, String inMainRoll, int inLength, String location)
+	{
+		super(inTitle, inType, inMainRoll, inLength);
+		this.location = location;
+	}
+	
+	//getter
+	public String getLocation()
+	{
+		return location;
+	}
+	
+	//setter
+	public void setLocation(String location)
+	{
+		this.location = location;
+	}
+	
+	public void printOut()		//override
+	{
+		super.printOut();
+		System.out.println(location);
+	}
+	
+	
+/*	public void printOut(String location)		//overload
+	{
+		super.printOut();
+		System.out.println(location);
+		
+	} */
+	
+}
+
+
+package movie;
+
+public abstract class Movie {
+	
+	public String title = "";
+	public String type = "";
+	public String mainRoll = "";
+	public int length = 0;
+	
+	//constuctor
+	public Movie()
+	{
+	}
+	
+	//constructor
+	public Movie(String inTitle, String inType, String inMainRoll, int inLength)
+	{
+		this.title = inTitle;
+		this.type = inType;
+		this.mainRoll = inMainRoll;
+		this.length = inLength;
+	}
+	
+	public String getTitle()
+	{
+		return title;
+	}
+	
+	public String getType()
+	{
+		return type;
+	}
+	
+	public String getMainRoll()
+	{
+		return mainRoll;
+	}
+	
+	public int getLength()
+	{
+		return length;
+	}
+	
+	public void setTitle(String inTitle)
+	{
+		this.title = inTitle;
+	}
+	
+	public void setType(String inType)
+	{
+		this.type = inType;
+	}
+	
+	public void setMainRoll (String inMainRoll)
+	{
+		this.mainRoll = inMainRoll;
+	}
+	
+	public void setLength (int inLength)
+	{
+		this.length = inLength;
+	}
+	
+	public void printOut()
+	{
+		//System.out.println(title + type + mainRoll + length);
+		System.out.println("");
+		System.out.println(title);
+		System.out.println(type);
+		System.out.println(mainRoll);
+		System.out.println(length);
+		
+
+	}
+}
+
+
+package movie;
+
+public class movieMain {
+
+	public static void main(String[] args) {
+		
+		långfilm m1 = new långfilm("killBill", "action", "Bill", 130, "TV");
+		
+		//Movie m2 = new Movie("killBill", "action", "Bill", 130);
+		
+		långfilm m3 = new långfilm();
+		m3.setLocation("Biograf");
+		
+		kortfilm m4 = new kortfilm("killBill", "action", "Bill", 130, "reklam");
+		
+		kortfilm m5 = new kortfilm();
+		m5.setSort("musik");
+		
+		typMusik m6 = new typMusik();
+		m6.setGenre("rock");
+		
+		//m2.printOut();
+		
+		m1.printOut();
+		
+		m3.printOut();
+		
+		m4.printOut();
+		
+		m5.printOut();
+		
+		m6.printOut();
+		
+	}
+
+}
+
+
+package movie;
+
+public class typMusik extends kortfilm{
+	public String genre;
+	
+	public typMusik()
+	{
+	}
+	
+	public typMusik(String inTitle, String inType, String inMainRoll, int inLength, String inSort, String inGenre)
+	{
+		super(inTitle, inType, inMainRoll, inLength, inSort);
+		this.genre = inGenre;
+	}
+	
+	public String getGenre()
+	{
+		return genre;
+	}
+	
+	public void setGenre(String inGenre)
+	{
+		this.genre = inGenre;
+	}
+	
+	public void printOut()
+	{
+		super.printOut();
+		System.out.println(genre);
+	}
+
+}

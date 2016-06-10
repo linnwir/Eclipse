@@ -1,0 +1,67 @@
+package fordon;
+
+public class bil {
+
+		private String märke; 
+		private String color;
+		private int pris;
+		
+		
+		public String Marke() {
+			return märke;
+			}
+			/* Setter for "märke" */
+		public void setMarke(String märke) {
+			this.märke = märke;
+			}
+			//Getter for "color"
+		public String Color() {
+			return color;
+			}
+			// Setter for "color"
+		public void setColor(String color) {
+			this.color = color;
+			}
+			//Getter for "pris"
+		public int Pris() {
+			return pris;
+			}
+			// Setter for "pris"
+		public void setPris(int pris) {
+			this.pris = pris;
+			}
+
+			
+		public static void main(String[] args) {
+			
+			int summa = 0;
+		
+			//Skapar objekt
+			bil volvo = new bil();
+			
+			//Sätter värde till märke, färg och pris för objektet med s.k. punktnotation.
+			volvo.setMarke("S40");
+			volvo.setColor("blålila");
+			volvo.setPris(30000);
+			
+			//Hämtar värde från objekt
+			System.out.println("Märket är " + volvo.Marke());
+			
+			bil bmw = new bil();
+			
+			//Sätter värde till märke, färg och pris för objektet med s.k. punktnotation.
+			bmw.setMarke("cabriolet");
+			bmw.setColor("svart");
+			bmw.setPris(60000);
+			
+			//Hämtar värde från objekt
+			System.out.println("Märket är " + bmw.Marke());
+			
+			summa = volvo.Pris() + bmw.Pris();
+			
+			System.out.println("Summan för bilarna är " + summa);
+		}
+
+	}
+
+

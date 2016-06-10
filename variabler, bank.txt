@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Variabler {
+
+	public static void main(String[] args) {
+		int konto = 10000;  
+		int uttag = 0; // skapar en tom låda
+		String name = null;
+		
+		System.out.println("Vad heter du? ");
+		
+		Scanner sc2 = new Scanner(System.in);
+		name = sc2.nextLine();
+	
+		System.out.println("Hej " + name + ", välkommen!");
+		
+		System.out.println("Hur mycket vill du ta ut?");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		uttag = sc.nextInt();
+		
+		konto = konto - uttag;
+		
+		System.out.println("Uttaget är på " + uttag + " kr");
+				
+		System.out.println("Det nya saldot är " + konto + " kr");
+		
+		if (konto  >=  3000)		
+			System.out.println("Bra, du klarar hyran denna månad!");
+		else if (konto  < 3000  && konto >= 0) 
+		            System.out.println("Du klarar inte hyran, du har " + konto + " Kr kvar på kontot");
+		else
+		             System.out.println("”Du har minus på kontot och får straffavgift!”");
+		
+		sc.close ();
+		sc2.close();
+	}
+
+}

@@ -1,0 +1,99 @@
+
+	public class person {
+	
+		private String name; //Variabel som endast kan nås i klassen.
+		private String adress;
+		private String email;
+		private int age;
+		
+		//Getter for "name"
+		public String Name() {
+			return name;
+		}
+		
+		// Setter for "name"
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		//Getter for "adress"
+		public String getAdress() {
+			return adress;
+		}
+		
+		// Setter for "adress"
+		public void setAdress(String adress) {
+			this.adress = adress;
+		}
+		
+		//Getter for "email"
+		public String getEmail() {
+			return email;
+		}
+		
+		// Setter for "email"
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		
+		//Getter for "age"
+		public int Age() {
+			return age;
+		}
+		
+		// Setter for "age"
+		public void setAge(int age) {
+			this.age = age;
+		}
+		
+		//Contructor
+		public person(String name, String adress, String email, int age)
+		{
+			this.name = name;
+			this.adress = adress;
+			this.email = email;
+			this.age = age;
+		}
+		
+		//Empty contructor
+		public person()
+		{
+		}
+		
+		public void skrivUt()
+		{
+			System.out.println(name + adress);
+			System.out.println("Adress: " + adress);
+			System.out.println("Email: " + email);
+			System.out.println("Age: " + age);
+		}
+	}
+
+
+
+
+public class personMain {
+
+	public static void main(String[] args) {
+		
+		person Linn = new person();
+		
+		Linn.setName("Wiren");
+		Linn.setAdress("Andrarum");
+		Linn.setEmail("linn.wir@gmail.com");
+		Linn.setAge(87);
+		
+		Linn.skrivUt();
+		
+		System.out.println("");
+		
+		person Lida = new person("Jorgensen", "Hörsholm", "lida.gorgensen@gmail.com", 52 );
+		
+		Lida.skrivUt();
+
+	}
+}	
+
+
+
+

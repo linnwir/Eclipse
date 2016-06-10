@@ -1,0 +1,30 @@
+
+public class methods {
+
+	public static void main(String[] args) {
+		skrivUt();
+		  
+		  skrivUt2("Hallå världen!");
+		  
+		  int summan = calculate(5,7);
+		  
+		  System.out.println("Summan av talen är " + summan); 
+				
+		}
+		
+		  private static int calculate(int tal1, int tal2)
+		  {
+			  int summa = tal1 + tal2;
+			  return summa;
+		  }
+		
+		  private static void skrivUt2(String printOut)
+		  {
+			  System.out.println("Detta är meddelandet: " + printOut);  
+		  }
+		
+		private static void skrivUt() {
+			 		System.out.println("Hello World!");
+			}
+
+}

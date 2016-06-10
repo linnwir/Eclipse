@@ -1,0 +1,92 @@
+public class book {
+	private String title; //Variabel som endast kan nås i klassen.
+	private String author;
+	private int price;
+	private String ISBN;
+	
+	//Getter for "title"
+	public String Title() {
+		return title;
+	}
+	
+	// Setter for "title"
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	//Getter for "author"
+	public String Author() {
+		return author;
+	}
+	
+	// Setter for "author"
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	//Getter for "price"
+	public int Price() {
+		return price;
+
+	}
+	
+	// Setter for "price"
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	//Contructor
+	public book(String title, String author, int price)
+	{
+		this.title = title;
+		this.author = author;
+		this.price = price;
+	}
+	
+	//Empty contructor
+	public book()
+	{
+	}
+	
+	public void skrivUt()
+	{
+		System.out.println("Titel: " + title);
+		System.out.println("Författare: " + author);
+		System.out.println("Pris: " + price);
+		System.out.println("");
+	}
+}
+
+
+
+
+public class Construktor2 {
+
+	public static void main(String[] args) {
+		
+		book historyBook = new book();
+		
+		//Ger värde till titel för objektet historyBook av klassen book med s.k. punktnotation.
+		historyBook.setTitle("Stormaktstiden");
+		historyBook.setAuthor("Peter Englund");
+		historyBook.setPrice(300);
+		
+		book fairytaleBook = new book();
+		
+		//Ger värde till titel för objektet historyBook av klassen book med s.k. punktnotation.
+		fairytaleBook.setTitle("Mio min Mio");
+		fairytaleBook.setAuthor("Astrid Lindgren");
+		fairytaleBook.setPrice(400);
+		
+		book programmingBook = new book("C++", "Lars", 500);
+		
+		System.out.println("Priset för programmeringsboken är " + programmingBook.Price() );
+		System.out.println("");
+		
+		historyBook.skrivUt();
+		programmingBook.skrivUt();
+	}
+	
+	
+
+}

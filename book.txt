@@ -1,0 +1,72 @@
+package book;
+
+public class bookMain { //Här talar vi om att det är en klass vi skapar och att den ska heta book.
+		
+		private String title; //Variabel som endast kan nås i klassen.
+		private String author;
+		private int price;
+			//egenskaper (properties). Används för att förhindra åtkomst till privata variabler.
+		
+		//Getter for "title"
+		public String Title() {
+		return title;
+		}
+		// Setter for "title"
+		public void setTitle(String title) {
+		this.title = title;
+		}
+		//Getter for "author"
+		public String Author() {
+		return author;
+		}
+		// Setter for "author"
+		public void setAuthor(String author) {
+		this.author = author;
+		}
+		//Getter for "price"
+		public int Price() {
+		return price;
+		}
+		// Setter for "price"
+		public void setPrice(int price) {
+		this.price = price;
+		}
+
+
+		public static void main(String[] args) {
+			//Skapar objekt
+			bookMain historyBook = new bookMain();
+			
+			//Sätter värde till titel, författare och pris för objektet med s.k. punktnotation.
+			historyBook.setTitle("Stormaktstiden");
+			historyBook.setAuthor("Peter Englund");
+			historyBook.setPrice(300);
+			
+			//Hämtar värde från objekt
+			System.out.println("Titel " + historyBook.Title());
+			
+			//Skapar objekt
+			bookMain fairytaleBook = new bookMain();
+			bookMain programmingBook = new bookMain();
+			//Sätter värden
+			fairytaleBook.setTitle("Mio min Mio");
+			fairytaleBook.setAuthor("Astrid Lindgren");
+			fairytaleBook.setPrice(500);
+			
+			programmingBook.setTitle("C++ Direkt");
+			programmingBook.setAuthor("Jan Skansholm");
+			programmingBook.setPrice(700);
+			
+			System.out.println("Titel bok 2 " + fairytaleBook.Title());
+			System.out.println("Titel bok 2 " + fairytaleBook.Author());
+			System.out.println("Titel bok 2 " + fairytaleBook.Price());
+			System.out.println("Titel bok 3 " + programmingBook.Title());
+			System.out.println("Titel bok 3 " + programmingBook.Author());
+			System.out.println("Titel bok 3 " + programmingBook.Price());
+			
+		}
+	}
+
+
+
+

@@ -1,0 +1,36 @@
+package uppg2;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		int choice;
+
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("Välj en siffra mellan 1 och 3");
+		choice = sc3.nextInt();
+
+		switch (choice) {
+			case 1:
+				System.out.println("Sätt in pengar");   		
+				break;
+			case 2:
+				System.out.println("Ta ut pengar");   		
+				break;
+			case 3:
+				System.out.println("Visa saldo");   
+				break;
+			case 4:
+				System.out.println("Avsluta");   		
+				break;	
+			default:
+				System.out.println("Ogiltigt val");  
+				break;
+			}
+
+
+
+	}
+
+}

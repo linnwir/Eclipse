@@ -1,0 +1,40 @@
+package uppg3;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int tal = 0;
+		int gissning = 0;
+		String name = null;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Tal att gissa? ");
+		
+		  tal = sc.nextInt();
+	
+		System.out.println("Vad heter du? ");
+		
+		Scanner sc2 = new Scanner(System.in);
+		name = sc2.nextLine();
+				
+		System.out.println("Hej " + name + ", välkommen!");
+		
+		Scanner sc4 = new Scanner(System.in);
+		
+		while (gissning != tal)  {				
+		    System.out.println("Skriv ett tal");
+		    gissning = sc4.nextInt();
+		}
+
+		System.out.println("Rätt talet var " + gissning);	
+
+		sc.close();
+		sc2.close();
+		sc4.close();
+	}
+
+}

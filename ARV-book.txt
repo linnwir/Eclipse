@@ -1,0 +1,301 @@
+import java.util.Scanner;
+
+public class BookMain {
+
+	public static void main(String[] args) {
+
+/*				BookP test = new BookP(); can not instantiate BookP (abstract class) */
+
+				Scanner scanner = new Scanner(System.in);
+				
+				ChildrenBook pippi = new ChildrenBook();
+				
+				pippi.setTitel("Mio");
+				
+				ChildrenBook pippi2 = new ChildrenBook("Emil","Lindgren",100, "12 år");
+				
+				pippi2.skrivUt();
+				
+				System.out.println("Priset är " + pippi2.Price());
+				
+				
+				double nettoPris = pippi2.Price() + (pippi2.Price()*0.25);	
+				
+				System.out.println("Priset inkluderat moms är " + nettoPris + " kr");
+				System.out.println("");
+				
+				FaktaBook katten = new FaktaBook();
+				
+				katten.setSubject("hälsa");
+				
+				FaktaBook katter = new FaktaBook("Din katt", "GMW", 160, "Psyket");
+				
+				katter.skrivUt();
+				
+				FaktaGenre djur = new FaktaGenre ();
+				
+				djur.setGenre("Djur");
+				
+				djur.skrivUt();
+				
+				FaktaGenre hälsa = new FaktaGenre ("Din hälsa", "GWPersson", 130, "Diabetes", "Hälsa");
+				
+				hälsa.skrivUt();
+				
+			    System.out.println("Aktuel moms?");
+			    double moms = scanner.nextDouble();
+			    
+			    double newPrice = hälsa.calculate(moms);
+				
+				System.out.println("Priset inkluderat moms är " + newPrice + " kr"); 
+			}
+	}
+
+import java.util.Scanner;
+
+public class BookMain {
+
+	public static void main(String[] args) {
+
+/*				BookP test = new BookP(); can not instantiate BookP (abstract class) */
+
+				Scanner scanner = new Scanner(System.in);
+				
+				ChildrenBook pippi = new ChildrenBook();
+				
+				pippi.setTitel("Mio");
+				
+				ChildrenBook pippi2 = new ChildrenBook("Emil","Lindgren",100, "12 år");
+				
+				pippi2.skrivUt();
+				
+				System.out.println("Priset är " + pippi2.Price());
+				
+				
+				double nettoPris = pippi2.Price() + (pippi2.Price()*0.25);	
+				
+				System.out.println("Priset inkluderat moms är " + nettoPris + " kr");
+				System.out.println("");
+				
+				FaktaBook katten = new FaktaBook();
+				
+				katten.setSubject("hälsa");
+				
+				FaktaBook katter = new FaktaBook("Din katt", "GMW", 160, "Psyket");
+				
+				katter.skrivUt();
+				
+				FaktaGenre djur = new FaktaGenre ();
+				
+				djur.setGenre("Djur");
+				
+				djur.skrivUt();
+				
+				FaktaGenre hälsa = new FaktaGenre ("Din hälsa", "GWPersson", 130, "Diabetes", "Hälsa");
+				
+				hälsa.skrivUt();
+				
+			    System.out.println("Aktuel moms?");
+			    double moms = scanner.nextDouble();
+			    
+			    double newPrice = hälsa.calculate(moms);
+				
+				System.out.println("Priset inkluderat moms är " + newPrice + " kr"); 
+			}
+	}
+
+
+public abstract class BookP {
+		
+		public String titel = "";
+		public String author = "";
+		public double price = 0;
+		public double moms = 0;
+		public double newPrice = 0;
+
+		public double calculate(double moms)
+		{
+			  newPrice = ((moms / 100) + 1) * this.price;
+			  return newPrice;
+		}
+
+		public BookP()
+		{
+		}
+		
+		public BookP(String titel, String author, int price)
+		{
+			this.titel = titel;
+			this.author = author;
+			this.price = price;
+		}
+		
+		// Setters
+		public void setTitel(String titel)
+		{
+			this.titel = titel;
+		}
+		
+		public void setPrice(int price)
+		{
+			this.price = price;
+		}
+		
+		public void setAuthor(String author)
+		{
+			this.author = author;
+		}
+		
+		// Getters
+		public String Titel()
+		{
+			return titel;
+		}
+		
+		public String Author()
+		{
+			return author;
+		}
+		
+		public double Price()
+		{
+			return price;
+		}
+		
+		public void skrivUt()
+		{
+			System.out.println("Titel: " + titel);
+			System.out.println("Författare: " + author);
+			System.out.println("Pris: " + price);
+		}
+		
+		public void skrivUt(double moms)
+		{
+			System.out.println("Titel: " + titel);
+			System.out.println("Författare: " + author);
+	//		System.out.println("Priset inkluderat moms är: " + calculate(13));  this sentence is overriden by child one
+		}
+	}
+
+
+
+public class ChildrenBook extends BookP
+{
+	public String age;
+
+		//Getter for "age"
+		public String Age() 
+		{
+			return age;   
+		}  
+		
+		// Setter for "age"
+		public void setAge(String age) 
+		{
+			this.age = age;
+		}
+
+		//Konstruktor (constructor) Metod som körs när objektet skapas. Denna är tom.
+	public ChildrenBook ()
+	{
+	}
+	
+	public ChildrenBook (String titel, String author, int price, String age)
+	{
+		super(titel, author, price);
+		this.age = age;
+	}
+	
+	public void skrivUt()
+	{
+		super.skrivUt();
+		System.out.println("Åldern är " + age);
+		System.out.println("");
+	}
+
+	
+}
+
+
+
+
+
+
+
+public class FaktaBook extends BookP{
+	
+		public String subject = "";
+		
+		public String Subject()
+		{
+			return subject;
+		}
+		
+		public void setSubject(String subject)
+		{
+			this.subject = subject;
+		}
+		
+		public FaktaBook()
+		{
+		}
+		
+		public FaktaBook(String titel, String author, int price, String subject)
+		{
+			super(titel, author, price);
+			this.subject = subject ;
+		}
+		
+		public void skrivUt()
+		{
+			System.out.println ("");
+			super.skrivUt();
+			System.out.println ("Ämnet är: " +subject);
+		}
+		
+		
+		
+		
+}
+
+
+
+	public class FaktaGenre extends FaktaBook{
+		
+		public String genre = "";
+		
+		public String Genre()
+		{
+			return genre;
+		}
+		
+		public void setGenre(String genre)
+		{
+			this.genre = genre;
+		}
+		
+		public FaktaGenre()
+		{
+		}
+		
+		public FaktaGenre(String titel, String author, int price, String subject, String genre)
+		{
+			super(titel, author, price, subject);
+			this.genre = genre ;
+		}
+		
+		public void skrivUt()
+		{
+			super.skrivUt();
+			System.out.println ("Typen är: " +genre);
+			System.out.println ("");
+		}
+		
+
+}
+
+
+
+
+
+

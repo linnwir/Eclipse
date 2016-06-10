@@ -1,0 +1,46 @@
+
+/*the declaration for java.util.Scanner.nextLine() method :
+   public String nextLine(); */
+
+/*import java.util.*;
+public class Test {
+	
+   public static void main(String[] args) {
+	   
+  String s2 = "Hello World! \n 3 + 3.0 = 6.0 true ";
+   
+  System.out.println(s2);
+
+   // create a new scanner with the specified String Object
+   Scanner scanner = new Scanner(System.in);
+   
+   System.out.println("Skriv ett ord: \n ");
+   String test = scanner.nextLine();
+   System.out.println("Du skrev: " + test);
+   
+   // close the scanner
+   scanner.close();
+   }
+}*/
+
+import java.util.*;
+
+public class Test {
+
+   public static void main(String[] args) {
+
+   String s = "Hello World! \n 3 + 3.0 = 6.0 true ";
+
+   // create a new scanner with the specified String Object
+   Scanner scanner = new Scanner(s);
+
+   // print the next line
+  System.out.println("" + scanner.nextLine());
+
+   // print the next line again
+  System.out.println("" + scanner.nextLine());
+
+   // close the scanner
+   scanner.close();
+   }
+}
