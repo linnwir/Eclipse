@@ -1,0 +1,26 @@
+import javax.swing.JFrame;
+
+public class swinMain {
+
+	public static void main(String[] args) {
+		
+		new MainFrame();
+	
+		
+		/*
+		JFrame frame = new JFrame("Java Swing");
+		
+		//vid krys stängs textfönstret och hela programmet 
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ;
+		
+		//gör fönstret synligt
+		frame.setVisible(true);
+		
+		frame.setSize(1200, 1000);
+		
+		*/
+
+
+	}
+
+}

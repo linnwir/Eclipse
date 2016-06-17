@@ -1,0 +1,28 @@
+import java.io.Serializable;
+
+public class langBook extends bookJava implements Serializable{
+	
+	public String language = "";
+	
+	public String getLanguage()
+	{
+		return language;
+	}
+	
+	public void setLanguage(String language)
+	{
+		this.language = language;
+	}
+	
+	public langBook()
+	{
+		
+	}
+	
+	public langBook(String title, String author, int price, String language)
+	{
+		super(title, author, price);
+		this.language = language;
+	}
+	
+}
