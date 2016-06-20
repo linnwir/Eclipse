@@ -149,6 +149,9 @@ public class MainFrame extends JFrame implements ActionListener{
 		txtLanguage.setBounds(500,190,200,20);
 		add(txtLanguage);
 		
+		repaint(); // för att hela fönstret laddas, när man kör programmet
+		revalidate();	// för att hela fönstret laddas, när man kör programmet
+		
 	}//Konstruktor slut
 	
 	public void actionPerformed(ActionEvent e)
